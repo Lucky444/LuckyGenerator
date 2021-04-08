@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="LuckyPlotGenerator:jar">
+    <output-path>$PROJECT_DIR$/../_City_Builder/plugins</output-path>
+    <root id="archive" name="LuckyPlotGenerator.jar">
+      <element id="module-output" name="LuckyPlotGenerator" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../_Dependencies/spigot-api-1.16.5.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,6 @@
+name: LuckyPlotGenerator
+version: 0.1
+author: Lucky44
+main: com.lucky44.lpgen.lpGen
+api-version: 1.14
+load: STARTUP
