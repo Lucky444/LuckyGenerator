@@ -7,7 +7,7 @@ A bukkit/spigot custom generator wich generates an infinite plot world for cityb
 3. Add the following lines to your _bukkit.yml_ file:
 ```yaml
 worlds:
-  yourworldname:
+  worldname:
     generator: LuckyPlotGenerator
 ```
 
