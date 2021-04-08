@@ -2,11 +2,10 @@
 A bukkit/spigot custom generator wich generates an infinite plot world for citybuild servers
 
 ## Install Instructions
-To install this plugin, get the newest version of spigot/bukkit and create a server.
-Download the most up to date version of this generator and drag it into your plugins folder.
-Add the following lines to your _bukkit.yml_ file:
-
-```ymal
+1. Download the most up to date version of this generator.
+2. Drag the _LuckyPlotGenerator.jar_ file into your plugins folder.
+3. Add the following lines to your _bukkit.yml_ file:
+```yaml
 worlds:
   yourworldname:
     generator: LuckyPlotGenerator
