@@ -1,7 +1,7 @@
 # LuckyGenerator
 A bukkit/spigot custom generator wich generates an infinite plot world for citybuild servers
 
-[image]: https://imgur.com/a/O8OQMlS "Aha"
+![image](https://i.imgur.com/EaUZKDU.png "World Generation")
 
 ## Install Instructions
 1. Download the most up to date version of this generator.
