@@ -4,6 +4,7 @@ import org.bukkit.Chunk;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
+import org.bukkit.block.Block;
 import org.bukkit.block.data.BlockData;
 import org.bukkit.generator.ChunkGenerator;
 
@@ -19,12 +20,10 @@ public class lpChunkGenerator extends ChunkGenerator
 
     BlockData bedrock = Material.BEDROCK.createBlockData();
     BlockData stone = Material.STONE.createBlockData();
+    BlockData way = Material.STONE_BRICKS.createBlockData();
     BlockData dirt = Material.DIRT.createBlockData();
     BlockData grass = Material.GRASS_BLOCK.createBlockData();
-
-    public lpChunkGenerator(String id){
-
-    }
+    BlockData slab = Material.SMOOTH_QUARTZ_SLAB.createBlockData();
 
     @Override
     public ChunkData generateChunkData(World world, Random random, int chunkX, int chunkZ, BiomeGrid biome) {
@@ -32,42 +31,58 @@ public class lpChunkGenerator extends ChunkGenerator
 
         try{
             if(chunkX % 2 == 0 && chunkZ % 2 == 0){
-                chunk = generateShit(0,0,16,16,chunk);
+                chunk = generateShit(0,0,17,16,chunk);
             }
             else{
                 chunk.setRegion(0, 0, 0, 16, 1, 16, Material.BEDROCK.createBlockData());
-                chunk.setRegion(0, 1, 0, 16, 16, 16, Material.STONE.createBlockData());
+                chunk.setRegion(0, 1, 0, 16, 16, 16, way);
 
                 if(chunkX % 2 != 0 && chunkZ % 2 == 0){
 
                     //Linke seite
                     chunk = generateShit(0,0,4,16,chunk);
-                    chunk.setRegion(5,16, 0,5,16,16,Material.STONE_SLAB.createBlockData());
+                    chunk.setRegion(4,16,0,5,17,16,slab);
 
                     //Rechte seite
                     chunk = generateShit(12,0,16,16,chunk);
-                    chunk.setRegion(11,16, 0,11,16,16,Material.STONE_SLAB.createBlockData());
+                    chunk.setRegion(11,16,0,12,17,16,slab);
                 }
                 if(chunkZ % 2 != 0 && chunkX % 2 == 0){
 
                     //Obere Seite
                     chunk = generateShit(0,12,16,16,chunk);
-                    chunk.setRegion(0,16, 11,16,16,11,Material.STONE_SLAB.createBlockData());
+                    chunk.setRegion(0,16,11,16,17,12,slab);
 
                     //Untere Seite
                     chunk = generateShit(0,0,16,4,chunk);
-                    chunk.setRegion(0,16, 5,16,16,5,Material.STONE_SLAB.createBlockData());
+                    chunk.setRegion(0,16,4,16,17,5,slab);
                 }
                 if(chunkZ % 2 != 0 && chunkX % 2 != 0){
                     chunk = generateShit(0,0,16,16,chunk);
 
                     //Oben - Unten
                     chunk.setRegion(4, 0, 0, 12, 1, 16, Material.BEDROCK.createBlockData());
-                    chunk.setRegion(4, 1, 0, 12, 16, 16, Material.STONE.createBlockData());
+                    chunk.setRegion(4, 1, 0, 12, 16, 16, way);
 
                     //Links - Rechts
                     chunk.setRegion(0, 0, 4, 16, 1, 12, Material.BEDROCK.createBlockData());
-                    chunk.setRegion(0, 1, 4, 16, 16, 12, Material.STONE.createBlockData());
+                    chunk.setRegion(0, 1, 4, 16, 16, 12, way);
+
+                    //1.Corner
+                    chunk.setRegion(11,16,11,12,17,16,slab);
+                    chunk.setRegion(12,16,11,16,17,12,slab);
+
+                    //2.Corner
+                    chunk.setRegion(11,16,4,16,17,5,slab);
+                    chunk.setRegion(11,16,0,12,17,4,slab);
+
+                    //3.Corner
+                    chunk.setRegion(4,16,11,5,17,16,slab);
+                    chunk.setRegion(0,16,11,4,17,12,slab);
+
+                    //4.Corner
+                    chunk.setRegion(4,16,0,5,17,4,slab);
+                    chunk.setRegion(0,16,4,5,17,5,slab);
                 }
             }
         }
